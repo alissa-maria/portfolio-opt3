@@ -1,13 +1,17 @@
 package com.company;
 
-public abstract class Character {
-    private String name;
-    private int health;
-    private int maxHealth;
+import java.util.Random;
 
-    private int attack;
-    private int defense;
-    private int speed;
+public abstract class Character {
+    public State state;
+
+    protected String name;
+    protected int health;
+    protected int maxHealth;
+
+    protected int attack;
+    protected int defense;
+    protected int speed;
 
     public Character(String name, int health, int attack, int defense, int speed) {
         this.name = name;
@@ -18,23 +22,24 @@ public abstract class Character {
         this.speed = speed;
     }
 
-    public abstract void attacks();
-    public String checks(Character character) {
-        return "NAME: " + character.getName() +
-                "\nHEALTH: " + character.getHealth() + "\n";
+    public void attacks(Character character, Character otherCharacter) {
+//        Random r = new Random();
+//        int min = character.getAttack()/2; int max = character.getAttack();
+//        int damage = r.nextInt(max-min+1) + min;
+        int damage = character.attack;
+        otherCharacter.health -= damage;
+        System.out.println(character.name + " hit " + otherCharacter.name + " and caused " + damage + " Hit Points damage!\n");
     }
 
-    /* getters to keep everything private */
-    public String getName() { return this.name; }
-    public int getHealth() { return this.health; }
-    public int getMaxHealth() { return this.maxHealth; }
-    public int getAttack() { return this.attack; }
-    public int getDefense() { return this.defense; }
-    public int getSpeed() { return this.speed; }
+    public String checks(Character character) {
+        return "NAME: " + character.name +
+                "\nHEALTH: " + character.health + "\n";
+    }
 
-    /* setters, only for necessary variables */
-    public void setHealth(int health) { this.health = health; }
-    public void setAttack(int attack) { this.attack = attack; }
-    public void setDefense(int defense) { this.defense = defense; }
-    public void setSpeed(int speed) { this.speed = speed; }
+    public void changeState(State state) {
+        this.state = state;
+    }
+
+    public State getState() { return this.state; }
+
 }

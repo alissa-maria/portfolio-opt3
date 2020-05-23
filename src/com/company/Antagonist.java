@@ -6,13 +6,4 @@ public class Antagonist extends Character {
         super(name, health, attack, defense, speed);
     }
 
-    @Override
-    public void attacks() {
-
-    }
-
-    @Override
-    public void checks(Character character) {
-
-    }
 }

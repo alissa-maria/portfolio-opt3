@@ -20,7 +20,7 @@ public class Protagonist extends Character {
 
     }
 
-    public void checks(Character character) {
-
-    }
+//    public String checks(Character character) {
+//        return "bruh";
+//    }
 }
