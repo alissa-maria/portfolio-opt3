@@ -8,9 +8,9 @@ public abstract class State {
     }
 
     public void setStats() {
-        character.getState().setAttack();
-        character.getState().setDefense();
-        character.getState().setSpeed();
+        character.state.setAttack();
+        character.state.setDefense();
+        character.state.setSpeed();
     }
 
     public abstract void setAttack();

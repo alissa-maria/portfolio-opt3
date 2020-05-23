@@ -7,9 +7,8 @@ public class Main {
         Antagonist antagonist = new Antagonist("Charmander", 40, 28, 30, 16);
 
         System.out.println(protagonist.attack);
-        StateOffense ugh = new StateOffense(protagonist);
-        protagonist.changeState(ugh);
-        protagonist.getState().setStats();
+        protagonist.changeState(new StateOffense(protagonist));
+
         System.out.println(protagonist.attack);
     }
 

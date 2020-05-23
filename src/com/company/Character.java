@@ -38,8 +38,6 @@ public abstract class Character {
 
     public void changeState(State state) {
         this.state = state;
+        state.setStats(); // ?????????????????????
     }
-
-    public State getState() { return this.state; }
-
 }
