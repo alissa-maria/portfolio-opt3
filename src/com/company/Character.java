@@ -6,9 +6,7 @@ public abstract class Character {
     public State state;
 
     protected String name;
-    protected int health;
-    protected int maxHealth;
-
+    protected int health, maxHealth;
     protected int attack;
     protected int defense;
     protected int speed;
@@ -22,13 +20,13 @@ public abstract class Character {
         this.speed = speed;
     }
 
-    public void attacks(Character character, Character otherCharacter) {
+    public void attacks(Character otherCharacter) {
 //        Random r = new Random();
 //        int min = character.getAttack()/2; int max = character.getAttack();
 //        int damage = r.nextInt(max-min+1) + min;
-        int damage = character.attack;
+        int damage = this.attack;
         otherCharacter.health -= damage;
-        System.out.println(character.name + " hit " + otherCharacter.name + " and caused " + damage + " Hit Points damage!\n");
+        System.out.println(this.name + " hit " + otherCharacter.name + " and caused " + damage + " Hit Points damage!\n");
     }
 
     public String checks(Character character) {

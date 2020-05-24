@@ -11,11 +11,9 @@ public class StateOffense extends State {
     }
 
     public void setDefense() {
-
+        double newDefense = (character.defense * 0.8);
+        character.defense = (int) newDefense;
     }
 
-    public void setSpeed() {
-
-    }
-
+    public void setSpeed() { }
 }
