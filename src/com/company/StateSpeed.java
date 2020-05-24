@@ -1,6 +1,8 @@
 package com.company;
 
 public class StateSpeed extends State {
+
+    /* constructor */
     public StateSpeed(Character character) {
         super(character);
     }

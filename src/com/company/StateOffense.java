@@ -1,6 +1,8 @@
 package com.company;
 
 public class StateOffense extends State {
+
+    /* constructor */
     public StateOffense(Character character) {
         super(character);
     }

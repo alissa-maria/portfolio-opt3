@@ -7,17 +7,16 @@ public abstract class Character {
 
     protected String name;
     protected int health, maxHealth;
-    protected int attack;
-    protected int defense;
-    protected int speed;
+    protected int attack, baseAttack;
+    protected int defense, baseDefense;
+    protected int speed, baseSpeed;
 
     public Character(String name, int health, int attack, int defense, int speed) {
         this.name = name;
-        this.health = health;
-        maxHealth = health;
-        this.attack = attack;
-        this.defense = defense;
-        this.speed = speed;
+        this.health = health; maxHealth = health;
+        this.attack = attack; baseAttack = attack;
+        this.defense = defense; baseDefense = defense;
+        this.speed = speed; baseSpeed = speed;
     }
 
     public void attacks(Character otherCharacter) {
