@@ -22,7 +22,7 @@ public abstract class Character {
     public void attacks(Character otherCharacter) {
         double damage = this.attack - ((double) otherCharacter.defense/8);
         otherCharacter.health -= (int) damage;
-        System.out.println(this.name + " hit " + otherCharacter.name + " and caused " + damage + " Hit Points damage!\n");
+        System.out.println(this.name + " hit " + otherCharacter.name + " and caused " + damage + " HP damage!\n");
     }
 
     public String checks(Character character) {

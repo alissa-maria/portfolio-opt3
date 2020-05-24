@@ -20,10 +20,10 @@ public class Antagonist extends Character {
             return "*" + this.name + " battle noises*";
         }
         else if ((this.maxHealth/4) < this.health) {
-            return "*" + this.name + " slightly worried noises*";
+            return "*slightly worried " + this.name + " noises*";
         }
         else if ((this.maxHealth/4) > this.health) {
-            return "*" + this.name + " panicking noises*";
+            return "*panicking " + this.name + " noises*";
         }
         return "";
     }

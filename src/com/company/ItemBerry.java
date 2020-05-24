@@ -7,4 +7,9 @@ public class ItemBerry extends Item {
         super(name);
         this.healPower = healPower;
     }
+
+    @Override
+    public String toString() {
+        return "This fresh berry restores " + healPower + " HP when eaten.";
+    }
 }
