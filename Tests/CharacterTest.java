@@ -9,8 +9,7 @@ import static org.junit.Assert.*;
 public class CharacterTest {
     Protagonist protagonist = Protagonist.getInstance();
 
-    /* modified condition coverage test */
-    /* I hope this is right... because the StateOffense is now "true", the attack is upped. */
+    /* modified decision coverage test */
     @Test
     public void stateTest() {
         int resultZero = protagonist.getAttack();

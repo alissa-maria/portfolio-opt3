@@ -1,7 +1,5 @@
 package com.company;
 
-import java.util.Random;
-
 public abstract class Character {
     public State state;
 

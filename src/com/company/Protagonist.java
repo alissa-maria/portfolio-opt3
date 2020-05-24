@@ -21,20 +21,19 @@ public class Protagonist extends Character {
     public void useItem(Item item) {
         if (item instanceof ItemBerry) {
             ItemBerry berry = (ItemBerry) item; // casting
-            if (this.health == maxHealth) { System.out.println("Your HP is already at maximum!\n"); }
-            else {
-                this.health += berry.healPower;
-                System.out.println("You used the " + berry.name + " and got healed with " + berry.healPower + " HP.\n");
-                if (this.health >= maxHealth) {
-                    this.health = maxHealth;
-                    System.out.println("Your HP is maxed out!\n");
-                }
-                this.items.remove(item);
+            if (this.health == maxHealth) {
+                System.out.println("Your HP is already at maximum!\n");
+                return; // item won't be used
             }
+            this.health += berry.healPower;
+            if (this.health >= maxHealth) {
+                System.out.println("Your HP is maxed out!\n");
+                this.health = maxHealth;
+            }
+            else {
+                System.out.println("You used the " + berry.name + " and got healed with " + berry.healPower + " HP.\n");
+            }
+            this.items.remove(item);
         }
     }
-
-//    public String checks(Character character) {
-//        return "bruh";
-//    }
 }
