@@ -33,7 +33,13 @@ public class Protagonist extends Character {
             else {
                 System.out.println("You used the " + berry.name + " and got healed with " + berry.healPower + " HP.\n");
             }
-            this.items.remove(item);
+
         }
+        if (item instanceof ItemLeaf) {
+            ItemLeaf leaf = (ItemLeaf) item;
+            this.baseAttack += leaf.attackRaise;
+            System.out.println("Your attack raised sharply!");
+        }
+        this.items.remove(item);
     }
 }

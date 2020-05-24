@@ -1,4 +1,5 @@
 import com.company.Antagonist;
+import com.company.ItemLeaf;
 import com.company.Protagonist;
 import com.company.StateOffense;
 import org.junit.Assert;
@@ -39,6 +40,15 @@ public class CharacterTest {
         Assert.assertEquals("*slightly worried PIDGEY noises*", result2);
     }
 
-
+    @Test
+    public void pairWiseTest() {
+        Antagonist antagonist = new Antagonist("PIDGEY", 40, 20, 16, 20);
+        ItemLeaf leaf = new ItemLeaf("leaf", 10);
+        protagonist.changeState(new StateOffense(protagonist));
+        protagonist.useItem(leaf);
+        protagonist.attacks(antagonist);
+        int result = antagonist.getHealth();
+        Assert.assertEquals(16, result);
+    }
 
 }

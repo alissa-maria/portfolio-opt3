@@ -34,4 +34,5 @@ public abstract class Character {
     }
 
     public int getAttack() { return this.attack; }
+    public int getHealth() { return this.health; }
 }
