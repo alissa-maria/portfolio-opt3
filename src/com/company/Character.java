@@ -35,6 +35,6 @@ public abstract class Character {
 
     public void changeState(State state) {
         this.state = state;
-        state.setStats(); // ?????????????????????
+        state.setStats();
     }
 }

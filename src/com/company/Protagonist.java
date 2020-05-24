@@ -1,9 +1,11 @@
 package com.company;
 
-public class Protagonist extends Character {
+import java.util.ArrayList;
 
-    /* singleton, there can only be one player */
+public class Protagonist extends Character {
     private static Protagonist protagonist = null;
+
+    ArrayList<Item> items = new ArrayList<>();
 
     private Protagonist(String name, int health, int attack, int defense, int speed) {
         super(name, health, attack, defense, speed);
@@ -16,7 +18,7 @@ public class Protagonist extends Character {
         return protagonist;
     }
 
-    public void attacks() {
+    public void useItem(Item item) {
 
     }
 
