@@ -20,8 +20,8 @@ public abstract class Character {
     }
 
     public void attacks(Character otherCharacter) {
-        double damage = this.attack - ((double) otherCharacter.defense/8);
-        otherCharacter.health -= (int) damage;
+        double damage = (int) (this.attack - ((double) otherCharacter.defense/8));
+        otherCharacter.health -= damage;
         System.out.println(this.name + " hit " + otherCharacter.name + " and caused " + damage + " HP damage!\n");
     }
 

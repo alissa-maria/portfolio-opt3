@@ -34,13 +34,13 @@ public class Main {
     }
 
     public void protagonistTurn() throws InterruptedException {
-        protagonistChoice.mainMenu(antagonist);
+        protagonistChoice.mainMenu(antagonist); Thread.sleep(1000);
         if (antagonist.health <= 0) { System.out.println("You've won!"); exit(0); }
     }
 
-    public void antagonistTurn() {
-        antagonist.cry();
-        antagonist.attacks(protagonist);
+    public void antagonistTurn() throws InterruptedException {
+        System.out.println(antagonist.cry()); Thread.sleep(1000);
+        antagonist.attacks(protagonist); Thread.sleep(1000);
         if (protagonist.health <= 0) { System.out.println("You died. Try again?"); exit(0); }
     }
 }

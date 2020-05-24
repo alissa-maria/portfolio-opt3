@@ -35,8 +35,8 @@ public class Menu {
         switch(input) {
             case 1: protagonist.attacks(antagonist); break;
             case 2: itemMenu(antagonist); break;
-            case 3: protagonist.checks(protagonist); break;
-            case 4: protagonist.checks(antagonist); break;
+            case 3: System.out.println(protagonist.checks(protagonist)); break;
+            case 4: System.out.println(protagonist.checks(antagonist)); break;
         }
     }
 
