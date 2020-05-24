@@ -7,6 +7,13 @@ public class Antagonist extends Character {
         super(name, health, attack, defense, speed);
     }
 
+    public void epicIntro() {
+        System.out.println("+------------------------------+");
+        System.out.println("     A WILD " + this.name        );
+        System.out.println("           APPEARED!            ");
+        System.out.println("+------------------------------+");
+    }
+
     /* the if statements are okay here right? RIGHT? */
     public void cry() {
         if ((this.maxHealth/2) < this.health) {

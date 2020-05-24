@@ -4,29 +4,26 @@ import java.util.ArrayList;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         Protagonist protagonist = Protagonist.getInstance();
-        Antagonist antagonist = new Antagonist("Charmander", 40, 22, 24, 16);
+        Antagonist antagonist = new Antagonist("CHARMANDER", 40, 22, 24, 16);
         ArrayList<Character> characters = new ArrayList<>();
         characters.add(protagonist);
         characters.add(antagonist); /* initialise protagonists and antagonists */
 
-        Menu menu = new Menu();
+        Menu protagonistChoice = new Menu();
 
-        System.out.println(protagonist.attack);
-        protagonist.changeState(new StateSpeed(protagonist));
+        antagonist.epicIntro();
 
-        System.out.println(protagonist.attack);
+        while(protagonist.health > 0) {
 
-//        System.out.println(antagonist1.health);
-//        protagonist.attacks(antagonist1);
-//        System.out.println(antagonist1.health);
+            protagonistChoice.mainMenu(antagonist);
+            antagonist.attacks(protagonist);
 
-        protagonist.changeState(new StateZero(protagonist));
+            protagonist.changeState(new StateZero(protagonist));
 
-    }
-
-    public static void initialise() {
+            if (antagonist.health <= 0) { System.out.println("You've won!"); }
+        }
 
     }
 }

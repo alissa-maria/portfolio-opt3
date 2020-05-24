@@ -38,7 +38,7 @@ public class Menu {
             case 1: protagonist.changeState(new StateOffense(protagonist)); break;
             case 2: protagonist.changeState(new StateDefense(protagonist)); break;
             case 3: protagonist.changeState(new StateSpeed(protagonist)); break;
-            case 4: mainMenu(antagonist);
+            case 4: mainMenu(antagonist); return;
         }
         protagonist.attacks(antagonist);
     }
@@ -69,7 +69,7 @@ public class Menu {
                 input = Integer.parseInt(sc.nextLine());
             }
             catch(NumberFormatException e) {
-                System.out.println("Enter a number from the list!");
+                System.out.println("Enter a number from the list!\n");
             }
         }
         return input;

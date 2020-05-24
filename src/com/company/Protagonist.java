@@ -13,7 +13,7 @@ public class Protagonist extends Character {
 
     public static Protagonist getInstance() {
         if (protagonist == null) {
-            protagonist = new Protagonist("Pikachu", 32, 20, 10, 26);
+            protagonist = new Protagonist("PIKACHU", 32, 20, 10, 26);
         }
         return protagonist;
     }
