@@ -8,8 +8,24 @@ public class Menu {
     Protagonist protagonist = Protagonist.getInstance();
     boolean run = false;
 
+
+    public void strategyMenu(Antagonist antagonist) throws InterruptedException {
+        System.out.println(protagonist.name + ", what strategy will you pick this turn?\n");
+        Thread.sleep(1000);
+        System.out.println( "1) OFFENSIVE\n" +
+                "2) DEFENSIVE\n" +
+                "3) AGILE\n");
+
+        int input = getInput(3);
+        switch (input) {
+            case 1: protagonist.changeState(new StateOffense(protagonist)); break;
+            case 2: protagonist.changeState(new StateDefense(protagonist)); break;
+            case 3: protagonist.changeState(new StateSpeed(protagonist)); break;
+        }
+    }
+
     public void mainMenu(Antagonist antagonist) throws InterruptedException {
-        System.out.println(protagonist.name + ", what will you do?\n");
+        System.out.println("What will you do?\n");
         Thread.sleep(1000);
         System.out.println("1) ATTACK\n" +
                 "2) USE ITEM\n" +
@@ -18,29 +34,11 @@ public class Menu {
 
         int input = getInput(4);
         switch(input) {
-            case 1: strategyMenu(antagonist); break;
+            case 1: protagonist.attacks(antagonist);; break;
             case 2: itemMenu(antagonist); break;
             case 3: protagonist.checks(protagonist); break;
             case 4: protagonist.checks(antagonist); break;
         }
-    }
-
-    public void strategyMenu(Antagonist antagonist) throws InterruptedException {
-        System.out.println("What strategy will you pick this turn?");
-        Thread.sleep(1000);
-        System.out.println( "1) OFFENSIVE\n" +
-                "2) DEFENSIVE\n" +
-                "3) AGILE\n" +
-                "4) (GO BACK)\n");
-
-        int input = getInput(4);
-        switch (input) {
-            case 1: protagonist.changeState(new StateOffense(protagonist)); break;
-            case 2: protagonist.changeState(new StateDefense(protagonist)); break;
-            case 3: protagonist.changeState(new StateSpeed(protagonist)); break;
-            case 4: mainMenu(antagonist); return;
-        }
-        protagonist.attacks(antagonist);
     }
 
     public void itemMenu(Antagonist antagonist) throws InterruptedException {

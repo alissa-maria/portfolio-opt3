@@ -1,7 +1,7 @@
 package com.company;
 
 public abstract class Item {
-    protected int ID;
+    protected String name;
 
-    public Item(int ID) { this.ID = ID; }
+    public Item(String name) { this.name = name; }
 }

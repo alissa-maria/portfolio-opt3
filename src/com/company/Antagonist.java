@@ -7,23 +7,24 @@ public class Antagonist extends Character {
         super(name, health, attack, defense, speed);
     }
 
-    public void epicIntro() {
-        System.out.println("+------------------------------+");
-        System.out.println("     A WILD " + this.name        );
-        System.out.println("           APPEARED!            ");
-        System.out.println("+------------------------------+");
+    public void epicIntro() throws InterruptedException {
+        System.out.println("+------------------------------+");     Thread.sleep(400);
+        System.out.println("         A WILD " + this.name    );     Thread.sleep(400);
+        System.out.println("           APPEARED!            ");     Thread.sleep(400);
+        System.out.println("+------------------------------+\n");   Thread.sleep(2200);
     }
 
     /* the if statements are okay here right? RIGHT? */
-    public void cry() {
+    public String cry() {
         if ((this.maxHealth/2) < this.health) {
-            System.out.println("*" + this.name + " battle noises*");
+            return "*" + this.name + " battle noises*";
         }
         else if ((this.maxHealth/4) < this.health) {
-            System.out.println("*" + this.name + " slightly worried noises*");
+            return "*" + this.name + " slightly worried noises*";
         }
         else if ((this.maxHealth/4) > this.health) {
-            System.out.println("*" + this.name + " panicking noises*");
+            return "*" + this.name + " panicking noises*";
         }
+        return "";
     }
 }
