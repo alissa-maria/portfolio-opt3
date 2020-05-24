@@ -6,7 +6,6 @@ import java.util.Scanner;
 public class Menu {
 
     Protagonist protagonist = Protagonist.getInstance();
-    boolean run = false;
 
 
     public void strategyMenu(Antagonist antagonist) throws InterruptedException {
@@ -34,7 +33,7 @@ public class Menu {
 
         int input = getInput(4);
         switch(input) {
-            case 1: protagonist.attacks(antagonist);; break;
+            case 1: protagonist.attacks(antagonist); break;
             case 2: itemMenu(antagonist); break;
             case 3: protagonist.checks(protagonist); break;
             case 4: protagonist.checks(antagonist); break;

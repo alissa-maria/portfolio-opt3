@@ -25,6 +25,7 @@ public class Main {
         while(true) {
             protagonistChoice.strategyMenu(antagonist);
 
+            /* speed (influenced by strategy) determines who goes first */
             if (protagonist.speed >= antagonist.speed) { protagonistTurn(); antagonistTurn(); }
             else if (protagonist.speed < antagonist.speed) { antagonistTurn(); protagonistTurn(); }
 
@@ -38,6 +39,7 @@ public class Main {
     }
 
     public void antagonistTurn() {
+        antagonist.cry();
         antagonist.attacks(protagonist);
         if (protagonist.health <= 0) { System.out.println("You died. Try again?"); exit(0); }
     }

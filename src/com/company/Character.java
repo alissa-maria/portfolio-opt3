@@ -34,4 +34,6 @@ public abstract class Character {
         this.state = state;
         state.setStats();
     }
+
+    public int getAttack() { return this.attack; }
 }
