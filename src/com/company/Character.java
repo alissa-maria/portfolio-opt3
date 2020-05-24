@@ -20,11 +20,8 @@ public abstract class Character {
     }
 
     public void attacks(Character otherCharacter) {
-//        Random r = new Random();
-//        int min = character.getAttack()/2; int max = character.getAttack();
-//        int damage = r.nextInt(max-min+1) + min;
-        int damage = this.attack;
-        otherCharacter.health -= damage;
+        double damage = this.attack - ((double) otherCharacter.defense/8);
+        otherCharacter.health -= (int) damage;
         System.out.println(this.name + " hit " + otherCharacter.name + " and caused " + damage + " Hit Points damage!\n");
     }
 
