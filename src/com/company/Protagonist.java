@@ -37,7 +37,7 @@ public class Protagonist extends Character {
         }
         if (item instanceof ItemLeaf) {
             ItemLeaf leaf = (ItemLeaf) item;
-            this.baseAttack += leaf.attackRaise;
+            this.baseAttack += leaf.attackRaise; this.attack += leaf.attackRaise;
             System.out.println("Your attack raised sharply!");
         }
         this.items.remove(item);

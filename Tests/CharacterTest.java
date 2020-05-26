@@ -48,7 +48,7 @@ public class CharacterTest {
         protagonist.useItem(leaf);
         protagonist.attacks(antagonist);
         int result = antagonist.getHealth();
-        Assert.assertEquals(16, result);
+        Assert.assertEquals(6, result);
     }
 
 }
